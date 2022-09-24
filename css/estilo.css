@@ -34,16 +34,20 @@ body {
 
 ul {
     list-style: none;
+
 }
 
 li {
     display: inline-block;
+
 }
 
 a {
+    font-size: 20px;
     text-decoration: none;
-    color: whitesmoke;
+    color: grey;
     padding: 10px;
+    
 }
 
 header {
@@ -69,13 +73,19 @@ header {
 nav{
     text-align: center;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    top: 85px;
+    padding-left: 55px;
 }
 
 
 nav a {
-    font-weight: 600;
+    font-weight: 400;
 padding: 14px 20px;
-border: 5px solid black;
+border: 5px black;
 }
 
 .row{
@@ -89,16 +99,16 @@ aside{
     background-color: blueviolet;
 }
 
-section{
+.seccion{
     flex: 70px;
     padding: 20px;
-    background-color:crimson;
+    background-color: skyblue;
 }
 
 footer{
     padding: 3em;
     text-align: center;
-    background-color: palevioletred;
+    background-color: rosybrown;
     margin-bottom: 0;
     margin-top: 1.5em;
 }
@@ -108,13 +118,12 @@ footer{
     justify-content: center;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 600px){
     nav, .row .body{
         flex-direction: column;
     }
 }
 
-@media (min-width:500px)
 
 nav a:hover {
     color: orange;
@@ -136,6 +145,15 @@ p {
     margin-top: 60px;
     text-align: center;
     justify-content: center;
+    display: flex;
+    font-weight: bold;
+    text-decoration: none;
+    width: 50%;
+}
+
+.parrafito{
+    margin: auto;
+    text-align: center;
 }
 
 h3 {
@@ -194,4 +212,72 @@ h3 {
     flex-wrap: wrap;
     max-width: 1000px;
     margin: auto;
+}
+
+
+.grilla{
+    width: 100%;
+    height: 100vh;
+
+}
+
+.grilla{
+    display: grid;
+    grid-template-areas:
+    "nav header header"
+    "nav servicios publicidad"
+    "nav productos publicidad"
+    "nav footer footer";
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    grid-row-gap: 20px;
+}
+
+.buzos{
+    grid-area: header;
+}
+
+.zapatillas{
+    grid-area: productos;
+    background-color: blue;
+}
+
+section{
+    grid-area: servicios;
+    background-color: beige;
+}
+
+.naav{
+    grid-area: nav;
+}
+
+aside{
+    grid-area: publicidad;
+}
+
+footer{
+    grid-area: footer;
+}
+
+
+.serviciosFlex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.img{
+    height: 200px;
+    width: 200px;
+    margin-bottom: 30px;
+    object-fit: cover;
+    filter: brightness(100%);
+    animation: escalar 1.5s infinite alternate;
+}
+
+@media screen and (max-width: 780px){
+    nav, .row .body{
+        flex-direction: column;
+    }
 }
